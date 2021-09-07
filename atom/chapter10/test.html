@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>계산기 만들기</title>
+    <script>
+    // function calculate() {
+    // 	let exp = document.querySelector("#exp");
+    // 	let result = document.querySelector("#result");
+    // 	result.value = eval(exp.value);
+    //   document.querySelectorAll('result').value = result;
+    // }
+
+    function makeInput(frm, buttonTxt)
+{
+ frm.inputFld.value += buttonTxt;
+}
+
+function compute(frm)
+{
+ frm.inputFld.value = eval(frm.inputFld.value);
+}
+
+function back() {
+ frm.value = frm.value.substring(0, frm.value.length - 1);
+            }
+
+
+function erase(frm)
+{
+ frm.inputFld.value = '0';
+}
+    </script>
+
+  </head>
+  <body>
+    <table>
+      <form>
+
+      <div>
+        <div class="calc-header">
+            <input type="text" id="inputFld" value="">
+        </div>
+      <div>
+      <br>
+        <input type='button' value=' back ' onClick='back(this.form,"back")'>
+        <input type='button' value=' CE ' onClick='erase(this.form, "CE")'>
+        <input type='button' value=' C ' onClick='erase(this.form, "C")'>
+        <input type='button' value=' = ' onClick='compute(this.form, "=")'>
+     <br>
+        <input type='button' value=' 7 ' onClick='makeInput(this.form, "7")'>
+        <input type='button' value=' 8 ' onClick='makeInput(this.form, "8")'>
+        <input type='button' value=' 9 ' onClick='makeInput(this.form, "9")'>
+        <input type='button' value=' / ' onClick='makeInput(this.form, "/")'>
+      <br>
+        <input type='button' value=' 4 ' onClick='makeInput(this.form, "4")'>
+        <input type='button' value=' 5 ' onClick='makeInput(this.form, "5")'>
+        <input type='button' value=' 6 ' onClick='makeInput(this.form, "6")'>
+        <input type='button' value=' * ' onClick='makeInput(this.form, "*")'>
+      <br>
+        <input type='button' value=' 1 ' onClick='makeInput(this.form, "1")'>
+        <input type='button' value=' 2 ' onClick='makeInput(this.form, "2")'>
+        <input type='button' value=' 3 ' onClick='makeInput(this.form, "3")'>
+        <input type='button' value=' - ' onClick='makeInput(this.form, "-")'>
+      <br>
+        <input type='button' value=' 0 ' onClick='makeInput(this.form, "0")'>
+        <input type='button' value=' + ' onClick='makeInput(this.form, "+")'>
+        <input type='button' value=' none '>
+        <input type='button' value=' none '>
+      <br>
+      </form>
+    </table>
+  </body>
+</html>
